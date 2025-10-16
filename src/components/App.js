@@ -32,7 +32,7 @@ const handleInput = () => {
         item.email == email
     )
     if(!foundItem){
-        setUserErr("User Not Found")
+        setUserErr("User not found")
         return;
     }
     if(password != foundItem.password){
