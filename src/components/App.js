@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 
 const App = () => {
 
-    const [email,setPassword] = useState("")
+    const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+    const [userErr,setUserErr] = useState("")
+    const [userPass,setUserPass] = useState("")
     const data = [
     {
         id: 1,
@@ -24,11 +26,28 @@ const App = () => {
         password: "123456"
     }
 ]
+
+const handleInput = () => {
+    const foundItem = data.find((item) =>
+        item.email == email
+    )
+    if(!foundItem){
+        setUserErr("User Not Found")
+        return;
+    }
+    if(password != foundItem.password){
+        setUserPass("Password Incorrect")
+        return
+    }
+}
   return (
     <div>
-        <input id='input-email' />
-        <input id='input-password' />
+        <input onChange={(e) => setEmail(e.target.value)} id='input-email' />
+        <p>{userErr}</p>
+        <input onChange={(e) => setPassword(e.target.value)} id='input-password' />
+        <p>{userPass}</p>
         <button onClick={handleInput} id='submit-form-btn'>Submit</button>
+        
     </div>
   )
 }
