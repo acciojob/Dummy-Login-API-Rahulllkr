@@ -43,9 +43,9 @@ const handleInput = () => {
   return (
     <div>
         <input onChange={(e) => setEmail(e.target.value)} id='input-email' />
-        <p>{userErr}</p>
+        <p id='user-error'>{userErr}</p>
         <input onChange={(e) => setPassword(e.target.value)} id='input-password' />
-        <p>{userPass}</p>
+        <p id='password-error'>{userPass}</p>
         <button onClick={handleInput} id='submit-form-btn'>Submit</button>
         
     </div>
