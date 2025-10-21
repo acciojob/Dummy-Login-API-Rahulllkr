@@ -46,7 +46,7 @@ const handleInput = () => {
         <p id='user-error'>{userErr}</p>
         <input onChange={(e) => setPassword(e.target.value)} id='input-password' />
         <p id='password-error'>{userPass}</p>
-        <button onClick={handleInput} id='submit-form-btn'>Submit</button>
+        <button onClick={} id='submit-form-btn'>Submit</button>
         
     </div>
   )
